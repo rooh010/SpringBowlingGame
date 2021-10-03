@@ -41,5 +41,5 @@ out/
 
 
 ### Settings ###
-application.properties
-secret.properties
+# application.properties
+# secrets.properties
