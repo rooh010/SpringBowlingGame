@@ -1,0 +1,6 @@
+db_hostname={db_hostname}
+db_username={db_username}
+db_database={db_database}
+
+spring.jpa.hibernate.naming.physical-strategy=org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+spring.jpa.hibernate.ddl-auto=update
