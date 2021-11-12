@@ -6,13 +6,11 @@ import javax.persistence.*;
 @Table(name = "players")
 public class Player {
 
-
     private Long id;
 
     public String getPlayerName() {
         return PlayerName;
     }
-
 
     public void setPlayerName(String playerName) {
         PlayerName = playerName;

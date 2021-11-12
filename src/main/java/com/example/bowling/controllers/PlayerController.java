@@ -35,8 +35,8 @@ public class PlayerController {
         return "redirect:/";
     }
 
-    @GetMapping("/continueGame/{id}")
-    public String continueGame(@PathVariable ( value = "id") long id,Model model){
+    @GetMapping("/updatePlayer/{id}")
+    public String updatePlayer(@PathVariable ( value = "id") long id,Model model){
         Player player = playerService.getPlayerById(id);
 
         model.addAttribute("player", player);

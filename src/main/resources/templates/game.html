@@ -11,15 +11,18 @@
 <p></p>
 <div class="container" align="center">
   <div class="alert alert-dark" role="alert">
-    Update Player
+    New Game
   </div>
   <p></p>
-  <form action=# th:action="@{/savePlayer}" th:object ="${player}" method="POST">
+  Score : <text th:text="${game.getScore()}"></text>
+  <p></p>
+  Game ID : <text th:text="${game.getId()}"></text>
+  <p></p>
+  <form action=# th:action="@{/bowl/{id}(id=${game.id})}" th:object ="${game}" method="GET">
     <input type="hidden" th:field = "*{id}">
-    <input type="text" th:field = "*{playerName}" class="form-control mb-4 col-4">
-  <button type="submit" class="btn btn-dark col-2">Update Player Name</button>
+    <button type="submit" class="btn btn-primary btn-lg active col-2">Bowl</button>
   </form>
+  <a href="/" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Exit</a><p></p>
 </div>
-
 </body>
 </html>

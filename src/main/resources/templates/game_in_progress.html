@@ -12,12 +12,22 @@
 <div class="container" align="center">
 
   <div class="alert alert-dark" role="alert">
-    Start Game <text th:text="${player.getPlayerName()}"></text>
+    Game - In Progress
   </div>
   <p></p>
-
-  <form action=# th:action="@{/game}" th:object ="${game}" method="POST">
-    <button type="submit" class="btn btn-primary btn-lg active col-2">Start Game</button>
+  Game ID : <text th:text="${game.getId()}"></text>
+  <p></p>
+  Score : <text th:text="${game.getScore()}"></text>
+  <p></p>
+  First Shot : <text th:text="${game.getFirstBowlPins()}"></text>
+  <p></p>
+  Second Shot : <text th:text="${game.getSecondBowlPins()}"></text>
+  <p></p>
+  Frame : <text th:text="${game.getFrameNumber}"></text>
+  <p></p>
+  <form action=# th:action="@{/bowl/{id}(id=${game.id})}" th:object ="${game}" method="GET">
+    <input type="hidden" th:field = "*{id}">
+    <button type="submit" class="btn btn-primary btn-lg active col-2">Bowl</button>
   </form>
 
   <a href="/" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Exit</a><p></p>
